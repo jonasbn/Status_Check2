@@ -1,8 +1,8 @@
-# Awkward, not akward
-# Believe, not belive
-# Embarrassed, not embarassed
-# Entrepreneur, not enterpreneur
-# Liaison, not liasion
-# License, not lisence
-# Receive, not recieve
-# Successful, not successfull
+# Awkward, not 
+# Believe, not 
+# Embarrassed, not 
+# Entrepreneur, not 
+# Liaison, not 
+# License, not 
+# Receive, not 
+# Successful, not 
