@@ -1,12 +1,26 @@
-name: Spellcheck Action
-on: push
-
-jobs:
-  build:
-    name: Spellcheck
-    runs-on: ubuntu-latest
-    steps:
-      # The checkout step
-      - uses: actions/checkout@v3
-      - uses: rojopolis/spellcheck-github-actions@0.36.0
-        name: Spellcheck
+matrix:
+  - name: Markdown
+    expect_match: false
+    apsell:
+      mode: en
+    dictionary:
+      wordlists:
+        - .wordlist.txt
+      output: wordlist.dic
+      encoding: utf-8
+    pipeline:
+      - pyspelling.filters.markdown:
+          markdown_extensions:
+            - markdown.extensions.extra:
+      - pyspelling.filters.html:
+          comments: false
+          attributes:
+            - alt
+          ignores:
+            - ':matches(code, pre)'
+            - 'code'
+            - 'pre'
+            - 'blockquote'
+    sources:
+      - '*.md'
+      - 'content/blog/**/*.md'
